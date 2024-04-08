@@ -111,7 +111,7 @@ body {
             transition: 0.2s ease-in-out;
         }
         nav .nav-bar .dropdown:hover .project{
-            height:240px;
+            height:250px;
             width: 100%;
             visibility: visible;
         }
@@ -192,7 +192,8 @@ body {
 /* Slideshow container */
 .slideshow-container {
    width: 100%;
-   max-width: 100%;
+   height: 90vh;
+   overflow: hidden;
    position: relative;
    z-index: -15;
 }
@@ -294,7 +295,7 @@ body {
 .scroller[data-animated="true"] {
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
-    -webkit-mask-image: linear-gradient( to right, transparent, white 20%, white 80%, transparent);
+    /*-webkit-mask-image: linear-gradient( to right, transparent, white 20%, white 80%, transparent);*/
 }
 
 
@@ -362,7 +363,43 @@ body {
 }
 
 
+.slideshow-container > .overlay {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(245, 237, 237);
+    background-color: #0c0505;
+    height: 420px;
+    width: 600px;
+    opacity: 0.7;
+    z-index: 9999;
+}
 
+.slideshow-container > .overlay h1,
+.slideshow-container > .overlay p,
+.slideshow-container > .overlay button {
+    margin: 25px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.slideshow-container > .overlay h1{
+    font-size: 3rem;
+}
+.slideshow-container > .overlay > button{
+    height: 3.5rem;
+    width: 12rem;
+    text-align: center;
+    font-size: 1.5rem ;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: #c6324e;
+    color: white;
+    position: absolute;
+    left: 0;
+}
 /*no of volunters and ngo*/
 
 .wrapper {
@@ -474,16 +511,22 @@ span.text {
 
 
 .Testimonials{
+    background-image: url("./images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 40px 0;
     color: #434343;
     text-align: center;
 }
 
 .inner{
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
+}
+.inner > h1 {
+    font-weight: 500;
 }
 
 .border{
@@ -497,9 +540,11 @@ span.text {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
 }
 
 .col{
+
     flex:33.33%;
     max-width: 33.33%;
     box-sizing: border-box;
@@ -507,6 +552,9 @@ span.text {
 }
 
 .con1{
+    background-color: white;
+    margin-top: 50px;
+    position: relative;
     padding: 30px;
     box-shadow:
             2px 2px 5px rgba(91, 81, 81, 0.5),
@@ -514,7 +562,6 @@ span.text {
             2px -2px 5px rgba(91, 81, 81, 0.5),
             -2px -2px 5px rgba(91, 81, 81, 0.5);
     transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
-
  }
 
 .con1:hover {
@@ -529,14 +576,17 @@ span.text {
 .con1 > p {
     text-align: left;
     margin-left: 3rem;
+    margin-top: 15%;
 }
 
 .con1 img{
-    width: 250px;
-    height: 160px;
-    border-radius: 5px;
-    border: 6px solid grey;
-
+    position: absolute;
+    left: 37%;
+    top: -40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid grey;
 }
 
 .name{
@@ -555,7 +605,8 @@ span.text {
 
 
 .new_footer_top {
-    padding: 120px 0px 270px;
+    /*padding: 120px 0px 270px ;*/
+    padding: 100px 0px 200px;
     position: relative;
     overflow-x: hidden;
 }
@@ -614,7 +665,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 .f_widget.about-widget .f_list {
     margin-bottom: 0px;
 }
-.new_footer_top .f_social_icon a {
+.new_footer_top .social_icon a {
     width: 44px;
     height: 44px;
     line-height: 43px;
@@ -622,7 +673,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     border: 1px solid #e2e2eb;
     font-size: 24px;
 }
-.f_social_icon a {
+.social_icon > a {
     text-decoration: none;
     width: 46px;
     height: 46px;
@@ -630,6 +681,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     font-size: 14px;
     line-height: 45px;
     color: #858da8;
+    cursor: pointer;
     display: inline-block;
     background: #ebeef5;
     text-align: center;
@@ -663,12 +715,12 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     color: #c22d2d;
 }
 
-.new_footer_top .f_social_icon a:hover {
-    background: #c22d2d;
-    border-color: #c22d2d;
-    color:white;
+ .social_icon a:hover {
+    background: #c22d2d !important;
+    border-color: #c22d2d !important;
+    color:white !important;
 }
-.new_footer_top .f_social_icon a + a {
+.new_footer_top .social_icon a + a {
     margin-left: 4px;
     text-decoration: none;
 }
@@ -682,7 +734,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 .f_size_18 {
     font-size: 18px;
 }
-h1, h2, h3, h4, h5, h6 {
+footer > h1, h2, h3, h4, h5, h6 {
     color: #4b505e;
 }
 .new_footer_top .f_widget.about-widget .f_list li a {
@@ -723,7 +775,9 @@ h1, h2, h3, h4, h5, h6 {
     animation: myfirst 30s linear infinite;
 }
 
-
+.container{
+    margin-left: 0;
+}
 
 @-moz-keyframes myfirst {
     0% {
